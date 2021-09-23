@@ -1,0 +1,47 @@
+void main(void) {
+    TRISGPIO = 0b00001111;
+    int flg  = 0b00000000;
+    OPTION   = 0b11000111;
+    GPIObits.GP5 = 1;
+    while(1){
+        
+        if( (GPIObits.GP1 == 0) & !( flg & (1<<1) ) ){   ////motor on when low sensor 0
+        flg |= (1<<2);
+        GPIObits.GP5 = 0;
+        __delay_ms(2000);       // 
+        }
+       
+        
+        if ((GPIObits.GP0 == 0 ) ){   ////motor off when pump sensor 0
+            GPIObits.GP5 = 1;
+            
+            if (flg & (1<<2)){
+            flg = 0b00000010;
+            }
+        }
+     
+    
+        if(GPIObits.GP2 == 1 ){       ////////////////upper sens
+        GPIObits.GP5 = 1;
+        flg  &= ~(1<<2);
+        __delay_ms(100);
+        }
+        if (GPIObits.GP3 == 0){
+            flg = 0b00000000;
+            
+        }
+        if( flg == 0b00000010){
+            for(int i=0;i<200;i++){
+                second_pulse();
+            }
+            __delay_ms(100);
+            for(int i=0;i<100;i++){
+                first_pulse();
+            }
+            __delay_ms(30);
+            for(int i=0;i<100;i++){
+                first_pulse();
+            }
+        }
+        }
+    }

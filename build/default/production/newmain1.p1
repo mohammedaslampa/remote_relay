@@ -1,0 +1,106 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"311 D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 311: extern volatile __control unsigned char TRISGPIO __attribute__((address(0x006)));
+[v _TRISGPIO `VWuc ~T0 @X0 0 e@6 ]
+"303
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 303: extern volatile __control unsigned char OPTION __attribute__((address(0x000)));
+[v _OPTION `VWuc ~T0 @X0 0 e@0 ]
+"259
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 259:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . GP0 GP1 GP2 GP3 GP4 GP5 ]
+"258
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 258: typedef union {
+[u S15 `S16 1 ]
+[n S15 . . ]
+"268
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 268: extern volatile GPIObits_t GPIObits __attribute__((address(0x006)));
+[v _GPIObits `VS15 ~T0 @X0 0 e@6 ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"55 D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"75
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 75: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"95
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 95: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"115
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 115: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"187
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 187: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"207
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 207: __asm("OSCCAL equ 05h");
+[; <" OSCCAL equ 05h ;# ">
+"255
+[; ;D:/mplab/packs/Microchip/PIC12-16Cxxx_DFP/1.3.51/xc8\pic\include\proc\pic12c508.h: 255: __asm("GPIO equ 06h");
+[; <" GPIO equ 06h ;# ">
+[v $root$_main `(v ~T0 @X0 0 e ]
+"11 newmain1.c
+[; ;newmain1.c: 11: void main(void) {
+[; ;newmain1.c: 11:             GPIObits.GP1 = 0;
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"19
+[e = _TRISGPIO -> -> 8 `i `uc ]
+"20
+[v _flg `i ~T0 @X0 1 a ]
+[e = _flg -> 0 `i ]
+"21
+[e = _OPTION -> -> 199 `i `uc ]
+"22
+[e :U 19 ]
+{
+"23
+[e = . . _GPIObits 0 0 -> -> 1 `i `uc ]
+"24
+[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
+"25
+[e = . . _GPIObits 0 2 -> -> 1 `i `uc ]
+"26
+[e = . . _GPIObits 0 4 -> -> 1 `i `uc ]
+"27
+[e = . . _GPIObits 0 5 -> -> 1 `i `uc ]
+"28
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"29
+[e = . . _GPIObits 0 0 -> -> 0 `i `uc ]
+"30
+[e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
+"31
+[e = . . _GPIObits 0 2 -> -> 0 `i `uc ]
+"32
+[e = . . _GPIObits 0 4 -> -> 0 `i `uc ]
+"33
+[e = . . _GPIObits 0 5 -> -> 0 `i `uc ]
+"34
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"36
+}
+[e :U 18 ]
+[e $U 19  ]
+[e :U 20 ]
+"37
+[e :UE 17 ]
+}
+"14
+[; ;newmain1.c: 14:             GPIObits.GP5 = 0;
+[p x OSC  =  IntRC       ]
+"15
+[; ;newmain1.c: 15:             _delay((unsigned long)((200)*(4000000/4000.0)));
+[p x WDT  =  OFF         ]
+"16
+[; ;newmain1.c: 16: 
+[p x CP  =  OFF          ]
+"17
+[; ;newmain1.c: 17:     }
+[p x MCLRE  =  OFF       ]

@@ -1,0 +1,277 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Wed May 26 00:48:53 2021
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	12C508
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=ENTRY,merge=1,delta=2
+     5                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+     8                           	dabs	1,0x1C,4
+     9  0000                     
+    10                           ; Version 2.30
+    11                           ; Generated 08/10/2020 GMT
+    12                           ; 
+    13                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    14                           ; All rights reserved.
+    15                           ; 
+    16                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    17                           ; 
+    18                           ; Redistribution and use in source and binary forms, with or without modification, are
+    19                           ; permitted provided that the following conditions are met:
+    20                           ; 
+    21                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    22                           ;        conditions and the following disclaimer.
+    23                           ; 
+    24                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    25                           ;        of conditions and the following disclaimer in the documentation and/or other
+    26                           ;        materials provided with the distribution. Publication is not required when
+    27                           ;        this file is used in an embedded application.
+    28                           ; 
+    29                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    30                           ;        software without specific prior written permission.
+    31                           ; 
+    32                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    33                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    34                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    35                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    36                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    37                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    38                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    39                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    40                           ; 
+    41                           ; 
+    42                           ; Code-generator required, PIC12C508 Definitions
+    43                           ; 
+    44                           ; SFR Addresses
+    45  0000                     	;# 
+    46  0001                     	;# 
+    47  0002                     	;# 
+    48  0003                     	;# 
+    49  0004                     	;# 
+    50  0005                     	;# 
+    51  0006                     	;# 
+    52  0006                     _GPIObits	set	6
+    53  0000                     _OPTION	set	0
+    54  0006                     _TRISGPIO	set	6
+    55                           
+    56                           	psect	cinit
+    57  001                     start_initialization:	
+    58                           ; #config settings
+    59                           
+    60  001                     __initialization:
+    61  001                     end_of_initialization:	
+    62                           ;End of C runtime variable initialization code
+    63                           
+    64  001                     __end_of__initialization:
+    65  001  0064               	clrf	4
+    66  002  0BD9               	ljmp	_main	;jump to C main() function
+    67                           
+    68                           	psect	cstackBANK0
+    69  007                     __pcstackBANK0:
+    70  007                     ?_main:
+    71  007                     ??_main:	
+    72                           ; 1 bytes @ 0x0
+    73                           
+    74                           
+    75                           ; 1 bytes @ 0x0
+    76  007                     	ds	3
+    77                           
+    78                           	psect	maintext
+    79  1D9                     __pmaintext:	
+    80 ;;
+    81 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+    82 ;;
+    83 ;; *************** function _main *****************
+    84 ;; Defined at:
+    85 ;;		line 11 in file "newmain1.c"
+    86 ;; Parameters:    Size  Location     Type
+    87 ;;		None
+    88 ;; Auto vars:     Size  Location     Type
+    89 ;;  flg             2    0        int 
+    90 ;; Return value:  Size  Location     Type
+    91 ;;                  1   12[None  ] void 
+    92 ;; Registers used:
+    93 ;;		wreg, fsr0l, fsr0h, status,2
+    94 ;; Tracked objects:
+    95 ;;		On entry : B00/0
+    96 ;;		On exit  : 0/0
+    97 ;;		Unchanged: 0/0
+    98 ;; Data sizes:     COMMON   BANK0
+    99 ;;      Params:         0       0
+   100 ;;      Locals:         0       0
+   101 ;;      Temps:          0       3
+   102 ;;      Totals:         0       3
+   103 ;;Total ram usage:        3 bytes
+   104 ;; This function calls:
+   105 ;;		Nothing
+   106 ;; This function is called by:
+   107 ;;		Startup code after reset
+   108 ;; This function uses a non-reentrant model
+   109 ;;
+   110                           
+   111                           
+   112                           ;psect for function _main
+   113  1D9                     _main:
+   114  1D9                     l556:	
+   115                           ;incstack = 0
+   116                           ; Regs used in _main: [wreg-fsr0h+status,2]
+   117                           
+   118  1D9  0C08               	movlw	8
+   119  1DA  0006               	tris	6
+   120  1DB                     l558:
+   121  1DB                     l560:
+   122  1DB  0CC7               	movlw	199
+   123  1DC  0002               	option
+   124  1DD                     l562:
+   125  1DD  0506               	bsf	6,0	;volatile
+   126  1DE                     l564:
+   127  1DE  0526               	bsf	6,1	;volatile
+   128  1DF                     l566:
+   129  1DF  0546               	bsf	6,2	;volatile
+   130  1E0                     l568:
+   131  1E0  0586               	bsf	6,4	;volatile
+   132  1E1                     l570:
+   133  1E1  05A6               	bsf	6,5	;volatile
+   134  1E2                     l572:
+   135  1E2  0C82               	movlw	130
+   136  1E3  0028               	movwf	??_main+1
+   137  1E4  0CDD               	movlw	221
+   138  1E5  0027               	movwf	??_main
+   139  1E6                     u17:
+   140  1E6  02E7               	decfsz	??_main,f
+   141  1E7  0BE6               	goto	u17
+   142  1E8  02E8               	decfsz	??_main+1,f
+   143  1E9  0BE6               	goto	u17
+   144  1EA  0BEB               	nop2
+   145  1EB                     l574:
+   146  1EB  0406               	bcf	6,0	;volatile
+   147  1EC                     l576:
+   148  1EC  0426               	bcf	6,1	;volatile
+   149  1ED                     l578:
+   150  1ED  0446               	bcf	6,2	;volatile
+   151  1EE                     l580:
+   152  1EE  0486               	bcf	6,4	;volatile
+   153  1EF                     l582:
+   154  1EF  04A6               	bcf	6,5	;volatile
+   155  1F0                     l584:
+   156  1F0  0C02               	movlw	2
+   157  1F1  0029               	movwf	??_main+2
+   158  1F2  0C04               	movlw	4
+   159  1F3  0028               	movwf	??_main+1
+   160  1F4  0CBA               	movlw	186
+   161  1F5  0027               	movwf	??_main
+   162  1F6                     u27:
+   163  1F6  02E7               	decfsz	??_main,f
+   164  1F7  0BF6               	goto	u27
+   165  1F8  02E8               	decfsz	??_main+1,f
+   166  1F9  0BF6               	goto	u27
+   167  1FA  02E9               	decfsz	??_main+2,f
+   168  1FB  0BF6               	goto	u27
+   169  1FC  0000               	nop
+   170  1FD  0BDD               	goto	l562
+   171  1FE  0A00               	ljmp	start
+   172  1FF                     __end_of_main:
+   173  001C                     btemp	set	28	;btemp
+   174  001C                     wtemp0	set	28
+   175  001E                     wtemp1	set	30
+   176  001C                     ttemp0	set	28
+   177  001C                     ltemp0	set	28
+   178                           
+   179                           	psect	config
+   180                           
+   181                           ;Config register CONFIG @ 0xFFF
+   182                           ;	Oscillator selection bits
+   183                           ;	OSC = IntRC, internal RC oscillator
+   184                           ;	Watchdog timer enable bit
+   185                           ;	WDT = OFF, WDT disabled
+   186                           ;	Code protection bit
+   187                           ;	CP = OFF, Code protection off
+   188                           ;	MCLR enable bit
+   189                           ;	MCLRE = OFF, MCLR tied to VDD, (Internally)
+   190  0FFF                     	org	4095
+   191  0FFF  0FEA               	dw	4074
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            23      3       3
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0       1
+                                              0 BANK0      3     3      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+BANK0               17      3       3       3       13.0%
+ABS                  0      0       0       4        0.0%
+BITBANK0            17      0       0       5        0.0%
+DATA                 0      0       0       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Wed May 26 00:48:53 2021
+
+                     u17 01E6                       u27 01F6                       fsr 0004  
+                    l560 01DB                      l570 01E1                      l562 01DD  
+                    l580 01EE                      l572 01E2                      l564 01DE  
+                    l556 01D9                      l582 01EF                      l574 01EB  
+                    l566 01DF                      l558 01DB                      l584 01F0  
+                    l576 01EC                      l568 01E0                      l578 01ED  
+                   _main 01D9                     btemp 001C                     start 0000  
+                  ?_main 0007                    ltemp0 001C                    ttemp0 001C  
+                  wtemp0 001C                    wtemp1 001E          __initialization 0001  
+           __end_of_main 01FF                   ??_main 0007                   _OPTION 0000  
+__end_of__initialization 0001               __pmaintext 01D9     end_of_initialization 0001  
+    start_initialization 0001                ___latbits 0000            __pcstackBANK0 0007  
+               _GPIObits 0006                 _TRISGPIO 0006            __size_of_main 0026  
